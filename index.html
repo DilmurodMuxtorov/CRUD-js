@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <script src="./assets/js/index.js" defer></script>
+    <title>CRUD</title>
+</head>
+
+<body>
+
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+            <div class="rounded-t mb-0 px-2 py-3 border-0">
+                <div class="flex flex-wrap items-center">
+                    <div class="relative w-full px-4 max-w-full flex-grow flex-1">
+                        <h3 class="font-semibold text-base text-blueGray-700">Users</h3>
+                    </div>
+                    <div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
+                        <button id="modal-btn"
+                            class="bg-indigo-500 text-white active:bg-indigo-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                            type="button">create user</button>
+                    </div>
+                </div>
+            </div>
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                    <th scope="col" class="px-6 py-3">
+                        Id
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        name
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        user name
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        age
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        job
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        salary
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        actions
+                    </th>
+                    <th scope="col" class="py-3">
+                        <span class="sr-only">Edit</span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody id="tBody">
+            </tbody>
+        </table>
+    </div>
+
+    <div id="modal"
+        class="hidden w-screen h-screen backdrop-blur-[5px] fixed z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <form id="form"
+            class="w-1/2  flex flex-col  justify-between p-10 rounded-xl bg-white fixed z-20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            <label>
+                name
+                <input type="text" id="name"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5    "
+                    required> </label>
+            <label>
+                user name
+                <input type="text" id="userName"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5    "
+                    required> </label>
+            <label>
+                age
+                <input type="number" id="age"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5    "
+                    required> </label>
+            <label>
+                job
+                <input type="text" id="job"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5    "
+                    required> </label>
+            <label>
+                salary
+                <input type="number" id="salary"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5    "
+                    required> </label>
+            <div class="flex justify-between mt-4">
+                <button id="btnClose" type="reset" class="border border-gray-400 rounded-lg p-2.5 px-5">cancel</button>
+                <button name="btn" type="submit"
+                    class="bg-sky-600 text-white rounded-lg p-2.5 px-5 disabled:opacity-50  disabled:cursor-not-allowed">submit</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="loading" class="fixed w-full h-full top-0 left-0 flex justify-center items-center">
+        <img src="./assets/icons/loader.gif" alt="loading" width="400px">
+    </div>
+
+</body>
+
+</html>
